@@ -1,0 +1,92 @@
+.home {
+  &__events {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(55rem, 1fr));
+    grid-gap: 3rem;
+    width: 100%;
+
+    @include respond(tap-land-2) {
+      margin-top: 6rem;
+    }
+
+    @include respond(phone-2) {
+      margin-top: 3rem;
+    }
+
+    & .carousel__viewport {
+      @include respond(phone-3) {
+        padding: 2rem 10rem 0 0;
+      }
+    }
+
+    & .carousel__slide {
+      padding-top: 2rem;
+
+      @include respond(phone-1) {
+        padding-top: 5rem;
+      }
+    }
+
+    & .carousel__slide:first-child {
+      @include respond(phone-3) {
+        margin-left: 1rem;
+      }
+
+      @include respond(phone-4) {
+        margin-left: 0rem;
+      }
+    }
+
+    & .carousel__slide:not(:last-child) {
+      @include respond(phone-3) {
+        margin-right: 4rem;
+      }
+    }
+  }
+
+  &__categories {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    overflow: hidden;
+
+    .carousel__slide {
+      align-items: center !important;
+    }
+
+    .btn {
+      justify-self: end;
+
+      @include respond(phone-3) {
+        grid-row: 3 / 4;
+        grid-column: 1 / -1;
+        justify-self: center;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &__products {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    .btn {
+      justify-self: end;
+      align-self: center;
+
+      @include respond(phone-3) {
+        grid-row: 4 / 5;
+        grid-column: 1 / -1;
+        justify-self: center;
+        margin-top: 2rem;
+      }
+    }
+
+    .sub__title {
+      @include respond(phone-3) {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+      }
+    }
+  }
+}

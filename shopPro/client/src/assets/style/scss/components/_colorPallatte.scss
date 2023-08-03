@@ -1,0 +1,45 @@
+.property_pallatte {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    width: max-content;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    border-radius: 5rem;
+    background-color: $color-primary-light;
+    font-weight: 600;
+    color: $color-grey-light-2;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    z-index: 20;
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    &.active {
+      background-color: $color-secondary;
+      transform: scale(0.8);
+    }
+
+    &:hover {
+      transform: scale(0.8);
+
+      &:after {
+        width: 200%;
+        height: 200%;
+        opacity: 1;
+      }
+    }
+
+    &.active:after {
+      width: 200%;
+      height: 200%;
+      opacity: 1;
+    }
+  }
+}

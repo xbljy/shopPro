@@ -1,0 +1,166 @@
+.baidumap-ctrl {
+  margin: 10px 10px 0 0;
+  float: right;
+  clear: both;
+  pointer-events: auto;
+  transform: translate(0);
+  &-top {
+    &-right {
+      margin: 2rem 2rem 0 0;
+      position: absolute;
+      pointer-events: none;
+      z-index: 20;
+      right: 2rem;
+    }
+  }
+  &-geocoder {
+    @media screen and (min-width: 640px) {
+      // width: 33.3333%;
+      font-size: 15px;
+      line-height: 20px;
+      max-width: 360px;
+    }
+
+    font-size: 18px;
+    line-height: 24px;
+    position: relative;
+    min-width: 240px;
+    z-index: 1;
+    transition: width .25s,min-width .25s;
+    
+    // box-shadow: 0 0 10px 2px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    width: 30rem;
+    padding: 1rem 2rem;
+    border-radius: 20rem;
+    background-color: #3a4750;
+    &--icon {
+      display: inline-block;
+      vertical-align: middle;
+      fill: #757575;
+      top: 15px;
+      @media screen and (min-width: 640px) {
+        top: 8px;
+      }
+      &-search {
+        position: absolute;
+        width: 23px;
+        height: 23px;
+        left: 2rem;
+        fill: #fff;
+        top: 50%;
+        transform: translateY(-50%);
+        @media screen and (min-width: 640px) {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      &-close {
+        width: 16px;
+        height: 16px;
+        margin-top: 3px;
+        margin-right: 0;
+        fill: #f66969;
+      }
+      &-loading {
+        width: 26px;
+        height: 26px;
+        margin-top: -2px;
+        margin-right: -5px;
+        animation: rotate .8s cubic-bezier(.45,.05,.55,.95) infinite;
+      }
+    }
+    &--input {
+      height: 36px;
+      padding: 6px 35px;
+      width: 100%;
+      border: 0;
+      background-color: transparent;
+      margin: 0;
+      height: 50px;
+      padding: 6px 45px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      outline: none;
+      color: #fff;
+      @media screen and (min-width: 640px) {
+        height: 36px;
+        padding: 6px 35px;
+      }
+    }
+    &--suggestion {
+      &-title, &-address {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      &-title {
+        font-weight: 700;
+      }
+    }
+    &--pin {
+      &-right {
+        > * {
+          z-index: 2;
+          position: absolute;
+          right: 8px;
+          top: 7px;
+          display: none;
+        }
+      }
+    }
+    &--button {
+      padding: 0;
+      margin: 0;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 2rem;
+      background-color: transparent;
+    }
+
+    .suggestions-wrapper {
+      .suggestions {
+        font-size: 13px;
+        background-color: #fff;
+        border-radius: 4px;
+        left: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+        top: 110%;
+        top: calc(100% + 6px);
+        z-index: 1000;
+        overflow: hidden;
+        font-size: 15px;
+        // box-shadow: 0 0 10px 2px rgb(0 0 0 / 10%);
+        li {
+          a {
+            cursor: default;
+            display: block;
+            padding: 6px 12px;
+            color: #404040;
+            &:hover{
+              color: #404040;
+              background-color: #f3f3f3;
+              text-decoration: none;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .active {
+        background-color: lightgray;
+      }
+    }
+  }
+}
+
+.tangram-suggestion-main {
+  z-index: 9999999;
+}
